@@ -1,0 +1,42 @@
+<nz-layout>
+  <app-header></app-header>
+  <nz-layout>
+    <nz-sider nzTheme="light" nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="264px" [nzTrigger]="triggerTemplate">
+      <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+        <li nz-menu-item [routerLink]="['/dashboard']" nzSelected>
+          <i nz-icon nzType="dashboard"></i>
+          <span>Dashboard</span>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="file-search"></i>
+          <span>Guidecard Report</span>
+        </li>
+        <li nz-submenu nzTitle="User Behavior" nzIcon="team" nzOpen="true">
+          <ul>
+            <li nz-menu-item>User Pattern Visualization</li>
+            <li nz-menu-item>User Flow Drilldown</li>
+          </ul>
+        </li>
+        <li nz-submenu nzTitle="Statistic" nzIcon="line-chart" nzOpen="true">
+          <ul>
+            <li nz-menu-item>Concurrent Sessioins</li>
+          </ul>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="project"></i>
+          <span>ANOVA Report</span>
+        </li>
+        <li nz-menu-item>
+          <i nz-icon nzType="mail"></i>
+          <span>Contact Team</span>
+        </li>
+      </ul>
+      <ng-template #triggerTemplate>
+        <div (click)="trigger()">
+          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i> {{toggleText}}
+        </div>
+      </ng-template>
+    </nz-sider>
+    <router-outlet></router-outlet>
+  </nz-layout>
+</nz-layout>

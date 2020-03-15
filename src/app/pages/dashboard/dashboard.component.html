@@ -1,0 +1,36 @@
+<nz-layout>
+  <nz-page-header>
+    <nz-page-header-title class="d-flex align-items-center">
+      Dashboard
+      <button class="ml-05" nz-button nzSize="small" appFullscreen [element]="wrapper" nz-tooltip nzTooltipTitle="Enter Fullscreen">
+        <i nz-icon nzType="arrows-alt" nzTheme="outline"></i>
+      </button>
+    </nz-page-header-title>
+<!--     <nz-page-header-footer>
+      <nz-tabset nzLinkRouter>
+        <nz-tab>
+          <a nz-tab-link [routerLink]="['overview']">Overview</a>
+        </nz-tab>
+        <nz-tab>
+          <a nz-tab-link [routerLink]="['my-dashboard']">My Dashboard</a>
+        </nz-tab>
+      </nz-tabset>
+    </nz-page-header-footer> -->
+     <nz-page-header-extra>
+       <nz-radio-group [(ngModel)]="pageValue" [nzButtonStyle]="'solid'">
+        <label nz-radio-button nzValue="0" [routerLink]="['overview']">Overview</label>
+        <label nz-radio-button nzValue="1" [routerLink]="['my-dashboard']">My Dashboard</label>
+      </nz-radio-group>
+     </nz-page-header-extra>
+<!--     <nz-breadcrumb nz-page-header-breadcrumb>
+      <nz-breadcrumb-item> <a [routerLink]="['overview']">Dashboard</a></nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        {{breadcrumbText}}
+      </nz-breadcrumb-item>
+    </nz-breadcrumb> -->
+  </nz-page-header>
+  <span #wrapper class="position-relative width-100 h-100">
+    <ngx-loading [show]="loading"></ngx-loading>
+    <router-outlet></router-outlet>
+  </span>
+</nz-layout>

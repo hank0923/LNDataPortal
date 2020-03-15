@@ -1,0 +1,204 @@
+app-layout {
+
+  .spinner-circle,
+  spinner-circle:after {
+    width: 8em !important;
+    height: 8em !important;
+  }
+
+  nz-sider {
+
+    .ant-menu-item,
+    .ant-menu-submenu-title {
+      // font-weight: 500;
+      color: #222;
+    }
+  }
+
+  nz-layout {
+    height: 100%;
+    width: 100%;
+  }
+
+  .ant-page-header {
+    background: #FFF;
+  }
+
+  app-header {
+    .logo {
+      font-size: 1.5em;
+      color: #FFF;
+      float: left;
+      font-weight: 600;
+    }
+
+    .ant-layout-header {
+      height: 48px;
+      line-height: 48px;
+      padding: 0 1.7em;
+    }
+
+    .ant-page-header-footer {
+      margin-top: 8px;
+    }
+  }
+
+  nz-breadcrumb {
+    margin: 16px 0;
+  }
+
+  app-dashboard {
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+  }
+
+  app-dashboard-overview {
+    position: relative;
+  }
+
+  app-map {
+    .ant-card-body {
+      padding: 0 !important;
+    }
+    .ant-card-small>.ant-card-head {
+      font-size: 16px;
+    }
+    .c-card, .c-card .ant-card-body{
+       min-height: 460px;
+       height: calc(100vh - 248px);
+    }
+  }
+
+  .l7-ctrl-logo {
+    display: none;
+  }
+
+}
+
+// utilities
+.h-100 {
+  height: 100% !important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.color-increase {
+  color: #3F8600 !important;
+}
+
+.color-decrease {
+  color: #CF1322 !important;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.line-height-1 {
+  line-height: 1;
+}
+
+.bg-white {
+  background: white;
+}
+
+.text-subheader {
+  color: rgba(0, 0, 0, .85);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.jusitify-content-space-around {
+  justify-content: space-around;
+}
+
+.jusitify-content-space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-direction-column {
+  flex-direction: coulum;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.pt-1,
+.py-1 {
+  padding-top: 1em !important;
+}
+
+.pb-l,
+.py-1 {
+  padding-bottom: 1em !important;
+}
+
+.pr-1,
+.px-1 {
+  padding-right: 1em !important;
+}
+
+.pl-l,
+.px-1 {
+  padding-left: 1em !important;
+}
+
+.mr-1,
+.mx-1 {
+  margin-right: 1em !important;
+}
+
+.m1-l,
+.mx-1 {
+  margin-left: 1em !important;
+}
+
+.mt-1,
+.my-1 {
+  margin-top: 1em !important;
+}
+
+.mb-l,
+.my-1 {
+  margin-bottom: 1em !important;
+}
+
+.mr-05,
+.mx-05 {
+  margin-right: .5em;
+}
+
+.ml-05,
+.mx-05 {
+  margin-left: .5em !important;
+}
+
+.mt-05,
+.my-05 {
+  margin-top: .5em;
+}
+
+.mb-05,
+.my-05 {
+  margin-bottom: .5em;
+}

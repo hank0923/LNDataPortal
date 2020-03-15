@@ -1,0 +1,56 @@
+<div nz-col [nzMd]="24"  class="h-100">
+  <nz-card class="width-100" [nzTitle]="titleTemplate" [nzExtra]="extraTemplate" [nzSize]="'small'">
+
+      <div  nz-card-grid class="px-1 py-1">
+      	<nz-statistic [nzValue]="320 | number" [nzTitle]="todayTemplate"></nz-statistic>
+      	<ng-template #todayTemplate>
+      	 	<div class="d-flex jusitify-content-space-between">
+      	 		<div>Today</div>
+      	 		<i nz-icon nzType="info-circle" nzTheme="outline" nz-tooltip [nzTooltipTitle]="todayDate | date: 'MMM. dd, yyyy'"></i>
+      	 	</div>
+      	</ng-template>
+      	<div *ngIf="hasDayIncrease"><i nz-icon nzType="caret-up"  class="color-increase"></i>DoD Increase 11%</div>
+      	<div *ngIf="!hasDayIncrease"><i nz-icon nzType="caret-down" class="color-decrease"></i>DoD Decrease 40%</div>
+      </div>
+      <div  nz-card-grid class="px-1 py-1">
+      	<nz-statistic [nzValue]="1297 | number" [nzTitle]="weekTemplate"></nz-statistic>
+      	 <ng-template #weekTemplate>
+      	 	<div class="d-flex jusitify-content-space-between">
+      	 		<div>This Week</div>
+      	 		<i nz-icon nzType="info-circle" nzTheme="outline" nz-tooltip [nzTooltipTitle]="thisWeekDateRange"></i>
+      	 	</div>
+      	 </ng-template>
+      	<div *ngIf="hasWeekIncrease"><i nz-icon nzType="caret-up"  class="color-increase"></i>WoW Increase 6%</div>
+      	<div *ngIf="!hasWeekIncrease"><i nz-icon nzType="caret-down" class="color-decrease"></i>WoW Decrease 12%</div>
+      </div>
+      <div  nz-card-grid class="px-1 py-1">
+      	<nz-statistic [nzValue]="25672 | number" [nzTitle]="monthTemplate"></nz-statistic>
+      	 <ng-template #monthTemplate>
+      	 	<div class="d-flex jusitify-content-space-between">
+      	 		<div>This Month</div>
+      	 		<i nz-icon nzType="info-circle" nzTheme="outline" nz-tooltip [nzTooltipTitle]="thisMonthDateRange"></i>
+      	 	</div>
+      	 </ng-template>
+      	<div *ngIf="hasMonthIncrease"><i nz-icon nzType="caret-up"  class="color-increase"></i>MoM Increase 67%</div>
+      	<div *ngIf="!hasMonthIncrease"><i nz-icon nzType="caret-down" class="color-decrease"></i>MoM Decrease 34%</div>
+      </div>
+
+  </nz-card>
+  <ng-template #extraTemplate>
+    <nz-select nzShowSearch nzPlaceHolder="Select product" [(ngModel)]="selectedProductValue" style="width: 200px;">
+      <nz-option nzLabel="Practical Guidance (AU)" nzValue="PG"></nz-option>
+      <nz-option nzLabel="Lexis Advance (AU)" nzValue="LA"></nz-option>
+    </nz-select>
+    <nz-select nzShowSearch nzPlaceHolder="Select statistic" [(ngModel)]="statisticValue" style="width: 164px;" class="ml-05">
+      <nz-option nzLabel="Sessions" nzValue="SESS"></nz-option>
+      <nz-option nzLabel="Concurrent Sessions" nzValue="CSESS"></nz-option>
+    </nz-select>
+  </ng-template>
+  <ng-template #titleTemplate>
+    Statistics
+  </ng-template>
+
+  <nz-card class="width-100 mt-1 c-card" [nzTitle]="null" [nzSize]="'small'">
+        <div id="map" class="position-relative width-100 h-100" style=""></div>
+  </nz-card>
+</div>
