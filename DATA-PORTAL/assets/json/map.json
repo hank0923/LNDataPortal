@@ -1,0 +1,279 @@
+[
+{
+  "key": "PG Home",
+  "values": [
+  {
+    "key": "100",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "41",
+      "Level1": "Session End",
+      "Percentage": "20",
+      "Total": "20"
+    },
+    {
+      "key": "43",
+      "values": [
+      {
+        "Category": "---Session End",
+        "key": "42",
+        "Level1": "Session End",
+        "Percentage": "5",
+        "Total": "5"
+      },
+      {
+        "key": "44",
+        "values": [
+        {
+          "Category": "---Session End",
+          "key": "45",
+          "Level1": "Session End",
+          "Percentage": "5",
+          "Total": "5"
+        },
+        {
+          "Category": "---TOC1",
+          "key": "46",
+          "Level1": "Sub Topic",
+          "Percentage": "10",
+          "Total": "10"
+        },
+        {
+          "Category": "---TOC2",
+          "key": "47",
+          "Level1": "Sub Topic",
+          "Percentage": "10",
+          "Total": "10"
+        },
+        {
+          "Category": "---",
+          "key": "48",
+          "Level1": "Document",
+          "values": [
+          {
+            "Category": "---Session End",
+            "key": "49",
+            "Level1": "Session End",
+            "Percentage": "5",
+            "Total": "5"
+          },
+          {
+            "key": "50",
+            "values": [
+            {
+              "Category": "---Session End",
+              "key": "80",
+              "Level1": "Session End",
+              "Percentage": "2",
+              "Total": "2"
+            },
+            {
+              "key": "81",
+              "values": [
+              {
+                "Category": "---Session End",
+                "key": "82",
+                "Level1": "Session End",
+                "Percentage": "1",
+                "Total": "1"
+              }]
+            }]
+          }]
+        }]
+      }]
+    }]
+  },
+  {
+    "key": "1",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "2",
+      "Level1": "Session End",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "3",
+      "Level1": "Session End",
+      "Percentage": "4",
+      "Total": "4"
+    }]
+  },
+  {
+    "key": "4",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "Session End",
+      "Level1": "5",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "6",
+      "Level1": "Session End",
+      "Percentage": "4",
+      "Total": "4"
+    }]
+  },
+  {
+    "key": "25",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "7",
+      "Level1": "Session End",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "8",
+      "Level1": "Session End",
+      "Percentage": "4",
+      "Total": "4"
+    }]
+  },
+  {
+    "key": "34",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "9",
+      "Level1": "Session End",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "10",
+      "values": [
+      {
+        "Category": "---Session End",
+        "key": "96",
+        "Level1": "Session End",
+        "Percentage": "6",
+        "Total": "6"
+      },
+      {
+        "Category": "---TOC",
+        "key": "107",
+        "Level1": "Session End",
+        "Percentage": "4",
+        "Total": "4"
+      }]
+    }]
+  },
+  {
+    "key": "23",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "11",
+      "Level1": "Session End",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "12",
+      "Level1": "Session End",
+      "Percentage": "4",
+      "Total": "4"
+    }]
+  },
+  {
+    "key": "22",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "13",
+      "Level1": "Session End",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "14",
+      "Level1": "Session End",
+      "Percentage": "4",
+      "Total": "4"
+    }]
+  },
+  {
+    "key": "21",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "15",
+      "Level1": "Session End",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "16",
+      "Level1": "Session End",
+      "Percentage": "4",
+      "Total": "4"
+    }]
+  },
+  {
+    "key": "20",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "17",
+      "Level1": "Session End",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "18",
+      "Level1": "Session End",
+      "Percentage": "4",
+      "Total": "4"
+    }]
+  },
+  {
+    "key": "19",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "Session End",
+      "Level1": "Session End",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "27",
+      "Level1": "Session End",
+      "Percentage": "4",
+      "Total": "4"
+    }]
+  },
+  {
+    "key": "Documen3",
+    "values": [
+    {
+      "Category": "---Session End",
+      "key": "d26",
+      "Level1": "Session End",
+      "Percentage": "6",
+      "Total": "6"
+    },
+    {
+      "Category": "---TOC",
+      "key": "Session End",
+      "Level1": "Session End",
+      "Percentage": "4",
+      "Total": "4"
+    }]
+  }]
+}]
