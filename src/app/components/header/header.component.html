@@ -1,7 +1,40 @@
-<nz-header>
-  <div class="logo"><i nz-icon class="mr-05" nzType="bar-chart" nzTheme="outline"></i>Data Portal</div>
-  <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
-    <li nz-menu-item class="float-right">Logout</li>
-    <li nz-menu-item class="float-right"><i nz-icon nzType="tool" nzTheme="outline"></i>Task Center</li>
-  </ul>
+<nz-header nzTheme="light" class="d-flex align-items-center justify-content-space-between">
+  <div class="logo d-flex align-items-center">
+    <!-- <i nz-icon class="mr-05" nzType="bar-chart" nzTheme="outline" ></i> -->
+    <img src="../../assets/icon/ic-logo.png" style="height: 28px;margin-right: 12px;">
+    <span class="mr-05">Data Portal</span>
+    <nz-divider nzType="vertical"></nz-divider>
+    <button class="mr-05" nz-button nzSize="small" nzType="default" (click)="toggleSidebarChildern()" nz-tooltip nzTooltipTitle="Toggle Sidebar">
+      <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i>
+    </button>
+    <span style="font-size: 0.88em">{{munuTitle}}</span>
+  </div>
+  <div class="header-menu d-flex align-items-center">
+
+    <form nz-form class="d-flex" [nzLayout]="validateForm.get('formLayout')?.value" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item class="d-flex flex-direction-column">
+        <!-- <nz-form-label class="text-align-left">Product</nz-form-label> -->
+        <nz-select formControlName="products"   (ngModelChange)="productChange($event)">
+          <nz-option *ngFor="let p of productData" [nzValue]="p.value" [nzLabel]="p.label"></nz-option>
+        </nz-select>
+      </nz-form-item>
+      <nz-form-item class="d-flex flex-direction-column">
+        <!-- <nz-form-label class="text-align-left">Date Range</nz-form-label> -->
+        <nz-range-picker [nzFormat]="dateFormat" formControlName="dateRange" nzAllowClear="false" (ngModelChange)="dateChange($event)"></nz-range-picker>
+      </nz-form-item>
+      <nz-form-item class="d-flex flex-direction-column mr-05">
+        <!-- <nz-form-label class="text-align-left">Customer Segment</nz-form-label> -->
+        <nz-select formControlName="segment" (ngModelChange)="segmentChange($event)">
+          <nz-option *ngFor="let s of segmentData" [nzValue]="s.value" [nzLabel]="s.label"></nz-option>
+        </nz-select>
+      </nz-form-item>
+      <nz-form-item class="d-flex align-items-flex-end">
+        <nz-form-control>
+          <!-- <button nz-button class="btn-black" nzShape="round" [disabled]="!validateForm.valid" [nzLoading]="btnLoading">Submit</button> -->
+          <button nz-button class="btn-gradient-orange" nzShape="round" [disabled]="!validateForm.valid" [nzLoading]="btnLoading">Submit</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+
+  </div>
 </nz-header>

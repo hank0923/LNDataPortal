@@ -1,41 +1,52 @@
 <nz-layout>
-  <app-header></app-header>
+  <app-header (toggleSidebar)="toggleSidebar($event)"></app-header>
   <nz-layout>
-    <nz-sider nzTheme="light" nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="264px" [nzTrigger]="triggerTemplate">
-      <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-        <li nz-menu-item [routerLink]="['/dashboard']" nzSelected>
-          <i nz-icon nzType="dashboard"></i>
-          <span>Dashboard</span>
+    <!-- <nz-sider nzTheme="light" nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="264px" [nzTrigger]="triggerTemplate"> -->
+    <nz-sider nzTheme="light" nzWidth="264px" [(nzCollapsed)]="isCollapsed" nzCollapsible nzCollapsedWidth="0" [nzTrigger]="null" [ngClass]="{'opacity-0': isCollapsed}">
+      <ul nz-menu nzTheme="light" nzMode="inline" (nzClick)="setMenuIcon($event)">
+        <li nz-menu-item nzMatchRouter="true">
+          <span>Home</span>
         </li>
-        <li nz-menu-item>
-          <i nz-icon nzType="file-search"></i>
+        <li nz-menu-item nzMatchRouter="true">
+          <!-- <i nz-icon nzType="file-search"></i> -->
           <span>Guidecard Report</span>
         </li>
-        <li nz-submenu nzTitle="User Behavior" nzIcon="team" nzOpen="true">
+        <li nz-submenu nzTitle="User Behavior" nzOpen="true">
           <ul>
-            <li nz-menu-item>User Pattern Visualization</li>
-            <li nz-menu-item>User Flow Drilldown</li>
+            <li nz-menu-item [routerLink]="['user-pattern']" class="d-flex align-items-center" nzMatchRouter="true">
+              <img class="activeMenuIcon" src="../../assets/icon/ic-a-us.png" style="height: 22px; margin-right: 8px;">
+              <img class="normalMenuIcon display-none" src="../../assets/icon/ic-n-us.png" style="height: 22px; margin-right: 8px;">
+              User Session Start Point 
+            </li>
+            <li nz-menu-item class="d-flex align-items-center" nzMatchRouter="true">
+              <img class="activeMenuIcon display-none" src="../../assets/icon/ic-a-uf.png" style="height: 22px; margin-right: 8px;">
+              <img class="normalMenuIcon" src="../../assets/icon/ic-n-uf.png" style="height: 22px; margin-right: 8px;">
+              User Flow Drilldown
+            </li>
           </ul>
         </li>
-        <li nz-submenu nzTitle="Statistic" nzIcon="line-chart" nzOpen="true">
+        <li nz-submenu nzTitle="Anomaly Detection" nzOpen="true" nzMatchRouter="true">
           <ul>
-            <li nz-menu-item>Concurrent Sessioins</li>
+            <li nz-menu-item class="d-flex align-items-center">
+              <img class="activeMenuIcon display-none" src="../../assets/icon/ic-a-cs.png" style="height: 22px; margin-right: 8px;">
+              <img class="normalMenuIcon" src="../../assets/icon/ic-n-cs.png" style="height: 22px; margin-right: 8px;">
+              Concurrent Sessioins
+            </li>
           </ul>
         </li>
-        <li nz-menu-item>
-          <i nz-icon nzType="project"></i>
+        <li nz-menu-item nzMatchRouter="true">
           <span>ANOVA Report</span>
         </li>
-        <li nz-menu-item>
-          <i nz-icon nzType="mail"></i>
-          <span>Contact Team</span>
+        <li nz-menu-item nzMatchRouter="true">
+          <span>Task Center</span>
+        </li>
+        <li nz-menu-item nzMatchRouter="true">
+          <span>Contact</span>
+        </li>
+        <li nz-menu-item nzMatchRouter="true">
+          <span>Logout</span>
         </li>
       </ul>
-      <ng-template #triggerTemplate>
-        <div (click)="trigger()">
-          <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'" (click)="isCollapsed = !isCollapsed"></i> {{toggleText}}
-        </div>
-      </ng-template>
     </nz-sider>
     <router-outlet></router-outlet>
   </nz-layout>

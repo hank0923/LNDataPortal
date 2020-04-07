@@ -1,0 +1,251 @@
+.overflow-auto {
+  // overflow: auto;
+  background: #f0f2f5
+}
+
+#body {
+  overflow: auto;
+  margin: 0;
+  font-size: 14px;
+  position: relative;
+}
+
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+pre {
+  font-size: 18px;
+}
+
+line {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  background: #ffe4c4 !important;
+  border: none !important;
+  border: 1px solid #ff771a !important;
+  color: #262626;
+  box-shadow: none;
+}
+
+.ant-collapse-content {
+  border-top: none;
+}
+
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) .stats-title {
+  color: #ff771a;
+}
+
+.s-chartInfo {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  width: 248px;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  z-index: 999
+}
+
+.togglebtn {
+  position: absolute;
+  top: 28px;
+  right: 16px;
+  z-index: 999
+}
+
+.s-chartTitle {
+  border-bottom: 1px solid #e7e7e7;
+  height: 56px;
+
+  .total-session {
+    height: 100%;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .title {
+    font-weight: 500;
+  }
+}
+
+.s-topTitle {
+  color: #262626;
+  font-weight: 600;
+  line-height: 2.5;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.stats-title {
+  font-size: 14px;
+  line-height: 1;
+  color: #7f7f7f;
+}
+
+.stats-number {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.gridStyle:hover,
+.gridStyle.active {
+  background: #fff2de;
+  color: #262626;
+}
+
+.gridStyle {
+  width: 50%;
+  transition: background 0.1s linear;
+  cursor: pointer;
+  text-align: center;
+  height: 64px !important;
+  display: inline-flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+  border-top: 1px solid transparent;
+
+  border-left: 1px solid #e7e7e7;
+  border-radius: 0;
+}
+
+.gridStyle:nth-child(2n) {
+  border-right: 1px solid #e7e7e7;
+}
+
+// .gridStyle:nth-last-child(-n+2) {
+// 	border-bottom:none;
+// }
+
+.node circle {
+  cursor: pointer;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font-size: 11px;
+}
+
+path.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: left;
+  pointer-events: none;
+  background: #FFFFEF;
+  width: 224px;
+  height: auto;
+  padding: 10px;
+  border: 1px solid #D5D5D5;
+  position: absolute;
+  font-size: 1.1em;
+  color: #222;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(200, 200, 200, 1);
+}
+
+
+
+div.subhead {
+  color: #222;
+  font-size: 11px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+div.tooltipTail {
+  position: absolute;
+  left: -7px;
+  top: 72px;
+  width: 7px;
+  height: 13px;
+  // background: url("../images/tail_white.png") 50% 0%;
+}
+
+div.toolTipBody {
+  position: absolute;
+  height: 100px;
+  width: 230px;
+}
+
+div.header {
+  text-align: left;
+  font-size: 12px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.5;
+  // text-align: center;
+
+}
+
+div.header-rule {
+  height: 1px;
+  margin: 1px auto 3px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  // background:#ddd;
+  width: 125px;
+}
+
+div.header1 {
+  text-align: left;
+  font-size: 12px;
+  margin-bottom: 2px;
+  color: #222;
+  text-align: center;
+}
+
+div.header2 {
+  color: #222;
+  /*   text-transform:uppercase;*/
+  font-size: 11px;
+  text-align: center;
+  font-style: italic;
+}
+
+div.header3 {
+  text-align: left;
+  font-size: 11px;
+  /*  width:170px;*/
+  text-align: center;
+}
+
+div.header4 {
+  /*  position:absolute;*/
+  text-align: center;
+  font-size: 24px;
+  /*  width:100px;*/
+  text-align: center;
+  overflow: hidden;
+  font-weight: bold;
+}

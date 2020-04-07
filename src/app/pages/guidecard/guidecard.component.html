@@ -1,0 +1,47 @@
+<nz-layout>
+  <nz-page-header>
+    <nz-page-header-title class="d-flex align-items-center">
+      Guidecard
+      <button class="ml-05" nz-button nzSize="small" appFullscreen [element]="wrapper" nz-tooltip nzTooltipTitle="Enter Fullscreen">
+        <i nz-icon nzType="arrows-alt" nzTheme="outline"></i>
+      </button>
+    </nz-page-header-title>
+
+<!--     <nz-breadcrumb nz-page-header-breadcrumb>
+      <nz-breadcrumb-item> <a [routerLink]="['overview']">Dashboard</a></nz-breadcrumb-item>
+      <nz-breadcrumb-item>
+        {{breadcrumbText}}
+      </nz-breadcrumb-item>
+    </nz-breadcrumb> -->
+  </nz-page-header>
+  <span #wrapper class="position-relative width-100 h-100">
+    <ngx-loading [show]="loading"></ngx-loading>
+    <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="PCSI">
+            TOC PCSI
+            <i nz-icon nz-tooltip nzTitle="This tells you where can you find PCSI" nzType="question-circle" nzTheme="outline" ></i>
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Required">
+          <input nz-input formControlName="PCSI" id="PCSI" placeholder="Enter PCSI for TOC document"/>
+        </nz-form-control>
+      </nz-form-item>
+      
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <label nz-checkbox formControlName="agree">
+            <span>I have read the <a>agreement</a></span>
+          </label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button nzType="primary">Register</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </span>
+</nz-layout>
+
+
+

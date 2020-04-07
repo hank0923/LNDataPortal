@@ -1,0 +1,118 @@
+<nz-layout>
+  <span #wrapper class="position-relative width-100 h-100 bg-gray">
+    <nz-layout style="padding:12px 8px;">
+      <div class="bg-white" style="width:100%;display: relative">
+        <button class="togglebtn" nz-button (click)="toggleTreeNodes()" nzType="link" nzSize="small">
+          <span *ngIf="isExpanded">
+            <i nz-icon nzType="minus-circle" nzTheme="twotone" [nzTwotoneColor]="'#ff771a'" class="mr-05"></i>
+            <span style="color: #262626">Collaspe Nodes</span>
+          </span>
+          <span *ngIf="!isExpanded">
+            <i nz-icon nzType="plus-circle" nzTheme="twotone" [nzTwotoneColor]="'#ff771a'" class="mr-05"></i>
+            <span style="color: #262626">Expand Nodes</span>
+          </span>
+        </button>
+        <div class="s-chartTitle">
+          <div class="total-session">
+            <div><span class="title">Total Sessions:</span> {{totalSessionNumber}} (100%)</div>
+            <div><span  class="title">Sessions starting from PG Home:</span> {{pageSessionNumber}} (88%)</div>
+          </div>
+        </div>
+        <!-- <div class="s-chartInfo" [ngClass]="{'pushdownSection': pushdownSection}"> -->
+        <div class="s-chartInfo">
+          <!-- <nz-collapse nzAccordion nzBordered> -->
+            <!-- <nz-collapse-panel [nzHeader]="panelName0" nzActive [nzExtra]="extraTpl"> -->
+              <div class="s-topTitle mt-05 mx-1">Select top sessions</div>
+              <nz-radio-group [(ngModel)]="radioValue" [nzButtonStyle]="'solid'" class="px-1">
+                <label *ngFor="let s of topSession" class="gridStyle" nz-radio-button [nzValue]="s.value" (click)="getSessionData()">
+                  <div class="stats-title">{{s.title}}</div>
+                  <div class="stats-number">{{s.number}}</div>
+                </label>
+              </nz-radio-group>
+               <nz-divider nzText="or"></nz-divider>
+              <form nz-form [formGroup]="validateForm" nzLayout="vertical" class="px-1 ">
+                <nz-form-item class="">
+                  <nz-form-label><span style="font-weight: 600">Query start point</span></nz-form-label>
+                  <nz-form-control>
+                    <nz-select nzAllowClear nzShowSearch  nzPlaceHolder="Choose start point" formControlName="startPoint" (ngModelChange)="requiredChange($event)">
+                      <nz-option *ngFor="let startPoint of startPointOptions" [nzLabel]="startPoint.label" [nzValue]="startPoint.value"></nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                   <div class="d-flex justify-content-center">
+                  <button nz-button class="btn-gradient-orange px-2 mt-1" nzSize="large" nzShape="round" [disabled]="!validateForm.valid" [nzLoading]="isloading" (click)="submitForm()">Query Result</button>
+                </div>
+                </nz-form-item>
+
+              </form>
+              <ng-template #extraTpl>
+                <button nz-button nzType="default" nzShape="circle" nzSize="small" (click)="$event.stopPropagation()" nz-popover nzPopoverTitle="" [(nzVisible)]="popoverIsVisible_topsession" nzPopoverTrigger="click" [nzPopoverContent]="contentTemplate">
+                  <i nz-icon nzType="info"></i>
+                </button>
+                <ng-template #contentTemplate>
+                  <div style="width:148px;font-size: 12px;" class="mb-05">This chart shows the pages that have the most sessions users start from. It provides an overview for what kind of tasks users mainly use the product to complete.</div>
+                  <a (click)="closePopover_topsession()" style="font-size: 12px;font-weight: 600">Close</a>
+                </ng-template>
+              </ng-template>
+              <ng-template #panelName0>
+                <b>Top Start Points</b>
+              </ng-template>
+            <!-- </nz-collapse-panel> -->
+<!--             <nz-collapse-panel [nzHeader]="panelName1" [nzExtra]="extraTpl1">
+              <form nz-form [formGroup]="validateForm" nzLayout="vertical" class="px-1 pt-1 pb-2">
+                <nz-form-item class="px-1 py-1 bg-gray mb-1">
+                  <nz-form-label nzRequired>Start Point</nz-form-label>
+                  <nz-form-control nzErrorTip="Select session start point">
+                    <nz-select nzAllowClear nzPlaceHolder="Choose start point" formControlName="startPoint" (ngModelChange)="requiredChange($event)">
+                      <nz-option *ngFor="let startPoint of startPointOptions" [nzLabel]="startPoint.label" [nzValue]="startPoint.value"></nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item> -->
+<!--                 <nz-form-item class="px-1 py-1 bg-gray mb-1" *ngIf="showEndPoint">
+                  <nz-form-label>End Point</nz-form-label>
+                  <nz-form-control nzErrorTip="Select session end point">
+                    <nz-select nzAllowClear nzPlaceHolder="Choose end point" formControlName="endPoint">
+                      <nz-option *ngFor="let endPoint of endPointOptions" [nzLabel]="endPoint.label" [nzValue]="endPoint.value"></nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item> -->
+<!--                 <nz-form-item class="py-0  mb-1">
+                  <nz-form-label>Include middle point in user path</nz-form-label>
+                  <nz-form-control>
+                    <nz-select nzAllowClear nzPlaceHolder="Choose middle point" formControlName="middlePoint">
+                      <nz-option *ngFor="let middlePoint of middlePointOptions" [nzLabel]="middlePoint.label" [nzValue]="middlePoint.value"></nz-option>
+                    </nz-select>
+                  </nz-form-control>
+                </nz-form-item> -->
+<!--                 <div class="d-flex justify-content-center">
+                  <button nz-button class="btn-gradient-orange px-2 mt-05" nzSize="large" nzShape="round" [disabled]="!validateForm.valid" [nzLoading]="isloading" (click)="submitForm()">Query Result</button>
+                </div>
+              </form>
+              <ng-template #panelName1><b>Query Start Point</b></ng-template>
+              <ng-template #extraTpl1>
+                <button nz-button nzType="default" nzShape="circle" nzSize="small" (click)="$event.stopPropagation()" nz-popover nzPopoverTitle="" [(nzVisible)]="popoverIsVisible_query" nzPopoverTrigger="click" [nzPopoverContent]="contentTemplate1">
+                  <i nz-icon nzType="info"></i>
+                </button>
+                <ng-template #contentTemplate1>
+                  <div style="width:148px;font-size: 12px;" class="mb-05">You can assign a starting point to query, ending point and middle point is optional.</div>
+                  <a (click)="closePopover_query()" style="font-size: 12px;font-weight: 600">Close</a>
+                </ng-template>
+              </ng-template>
+            </nz-collapse-panel> -->
+          <!-- </nz-collapse> -->
+        </div>
+        <ngx-loading [show]="loading"></ngx-loading>
+        <div id="body" style=" overflow:hidden" class="svg-container">
+          <div id="toolTip" class="tooltip" style="opacity: 0;">
+            <div id="head" class="header"></div>
+            <div id="subhead" class="subhead"></div>
+            <div id="precentageTip" class="tip selected">
+              <!-- <div class="header3"><br>Precentage</div> -->
+              <!-- <div class="header-rule"></div> -->
+              <div id="precentage" class="header4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nz-layout>
+  </span>
+</nz-layout>

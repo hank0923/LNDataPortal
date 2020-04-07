@@ -6,23 +6,13 @@
         <i nz-icon nzType="arrows-alt" nzTheme="outline"></i>
       </button>
     </nz-page-header-title>
-<!--     <nz-page-header-footer>
-      <nz-tabset nzLinkRouter>
-        <nz-tab>
-          <a nz-tab-link [routerLink]="['overview']">Overview</a>
-        </nz-tab>
-        <nz-tab>
-          <a nz-tab-link [routerLink]="['my-dashboard']">My Dashboard</a>
-        </nz-tab>
-      </nz-tabset>
-    </nz-page-header-footer> -->
-     <nz-page-header-extra>
+    <!--      <nz-page-header-extra>
        <nz-radio-group [(ngModel)]="pageValue" [nzButtonStyle]="'solid'">
         <label nz-radio-button nzValue="0" [routerLink]="['overview']">Overview</label>
         <label nz-radio-button nzValue="1" [routerLink]="['my-dashboard']">My Dashboard</label>
       </nz-radio-group>
-     </nz-page-header-extra>
-<!--     <nz-breadcrumb nz-page-header-breadcrumb>
+     </nz-page-header-extra> -->
+    <!--     <nz-breadcrumb nz-page-header-breadcrumb>
       <nz-breadcrumb-item> <a [routerLink]="['overview']">Dashboard</a></nz-breadcrumb-item>
       <nz-breadcrumb-item>
         {{breadcrumbText}}
@@ -31,6 +21,11 @@
   </nz-page-header>
   <span #wrapper class="position-relative width-100 h-100">
     <ngx-loading [show]="loading"></ngx-loading>
-    <router-outlet></router-outlet>
+    <!-- <router-outlet></router-outlet> -->
+    <nz-layout>
+      <div class="position-relative w-100 px-1 py-1">
+        <!-- <app-map></app-map> -->
+      </div>
+    </nz-layout>
   </span>
 </nz-layout>
