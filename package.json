@@ -22,7 +22,7 @@
     "@antv/l7": "^2.1.0",
     "@antv/l7-maps": "^2.1.0",
     "eventemitter3": "^4.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ng-zorro-antd": "^8.5.2",
     "ngx-loading": "^8.0.0",
     "rxjs": "~6.4.0",
